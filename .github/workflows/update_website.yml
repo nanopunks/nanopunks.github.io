@@ -27,6 +27,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install aiohttp
 
+      - name: Pull changes from remote
+        run: git pull origin main
+
       - name: Run update.py
         run: python update.py
 
