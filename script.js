@@ -40,9 +40,16 @@ async function fetchData() {
             console.error('Error fetching status.json:', error);
         }
 
+
         items = itemsData.map((item, index) => {
-            return { ...item, inscriptionid: statusData.data[index] || null };
-        });
+
+            if (statusData.data[index] === null) {
+                return { ...item, inscriptionid: null };
+            } else {
+                return null;
+            }
+        }).filter(item => item !== null);
+
 
         sortOutData();
         updatePageWithData()
@@ -182,14 +189,15 @@ async function imClicked(index) {
             myNFT.classList.add('ok');
             myNFT.innerHTML = `
                 <h1 class="text-lg font-large">Looks Good!</h1>
-                <p>No confirmed inscriptions found</p> 
-                <p style="color:#d43737;">NOTE: always double check <a href="https://unisat.io/" target="_blank"><u>Unisat</u></a> for unconfirmed inscriptions</p>
+                <p>No confirmed inscriptions found.</p> 
+                <p>You can right-click to save the image and then inscribe it at <a href="https://hk.unisat.io/inscribe" target="_blank"><u>https://unisat.io/inscribe/</u></a></p>
+                <p style="color:#d43737;">NOTE: Unconfirmed inscription: Others may currently be inscribing this image; it hasn't been added to the blockchain yet.</p>
             `;
         }
         imageBox.appendChild(myNFT);
         setTimeout(() => {
             myNFT.remove();
-        }, 6000);
+        }, 9000);
     }
 
     function getEarliestInscriptionId(res) {
