@@ -190,7 +190,8 @@ async function imClicked(index) {
             myNFT.innerHTML = `
                 <h1 class="text-lg font-large">Looks Good!</h1>
                 <p>No confirmed inscriptions found.</p> 
-                <p>You can right-click to save the image and then inscribe it at <a href="https://hk.unisat.io/inscribe" target="_blank"><u>https://unisat.io/inscribe/</u></a></p>
+                <p>You can right-click to save the image and then inscribe it at:</p>
+                <p><a href="https://hk.unisat.io/inscribe" target="_blank"><u>https://unisat.io/inscribe/</u></a></p>
                 <p style="color:#d43737;">NOTE: Unconfirmed inscription: Others may currently be inscribing this image; it hasn't been added to the blockchain yet.</p>
             `;
         }
