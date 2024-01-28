@@ -3,65 +3,77 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10000 NanoPunks</title>
-
+    <title id="pageTitle"></title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
         integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-        body {
-            background-color: #089981;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
-
-        img {
-            max-width: 30%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 56px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        .logo {
-            height: 8rem;
-            width: auto;
-            object-fit: contain;
-        }
-    </style>
 </head>
 
 <body>
+    <div id="home"></div>
     <nav class="backdrop-filter backdrop-blur-md sticky z-50 top-0">
         <div class="flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#home" class="flex"><img src="logo.png" class="logo" /></a>
-
-            <a href="https://twitter.com/tinypunksnfts" target="_blank" style="text-align: center; display: block;">
-                <i class="fa fa-twitter" style="font-size: 2em;"></i>
+            <a href="#home" class="flex"><img src="logo.png" class="h-16 nav-button" /></a>
+            <a href="data/images.zip" download class="download-link">
+                <i class="fa fa-download download-icon"></i>Download Images
             </a>
-
         </div>
     </nav>
-    <br>
-    <h1>3423/10000 NanoPunks, Coming Soon!</h1>
-    <p style="color: rgb(255, 0, 0);"><small style="font-size: 120%;">Minting temporarily unavailable due to hash-check API issues.</small></p>
-    <br>
-    <img src="preview.gif" alt="Animated GIF">
+
+    <div id="how-to" class="main">
+        <div id="collectionInfo" class="hello text-center text-3xl md:text-4xl lg:text-6xl"></div>
+
+
+
+        <a id="twitterLink" href="#" target="_blank" style="text-align: center; display: block;">
+            <i class="fa fa-twitter" style="font-size: 2em;"></i>
+        </a>
+        <div id="mintInfo" class="hello text-center text-3xl md:text-4xl lg:text-4xl">-</div>
+        <br>
+        <button class="accordion text-2xl font-large">How to</button>
+
+        <div class="panel">
+            <br>
+            <ul style="list-style-type: disc;">
+                <li>This collection follows the OMINT standard, where only the first confirmed inscription for each
+                    image is
+                    included.</li>
+                <li>To check the availability of an edition, use the check button below its image.<br>
+                    <span style="color:#d43737;">
+                        NOTE: This doesn't include any unconfirmed inscriptions; you can check unconfirmed inscriptions
+                        on
+                        <a class="font-bold" target="_blank" href="https://unisat.io/"
+                            style="color:#f83f3f;">Unisat.</a>
+                    </span>
+                </li>
+                <li>The status of the edition appears at the bottom right of the page. If it's free, right-click to save
+                    and
+                    inscribe using your preferred service.</li>
+                <li>Confirmed taken images appear grayed out, and updates on confirmed takens happen regularly.</li>
+                <li>Always use the check button, as some images may be inscribed but not yet confirmed as taken.</li>
+            </ul>
+        </div>
+
+        <div id="imageBox"></div>
+        <div id="thumbnail-container" class="main">
+            <br>
+            <div class="products grid grid-cols-3 md:grid-cols-7 lg:grid-cols-9 xl:grid-cols-10 pt-6 gap-6 px-10"
+                id="thumbnails">
+            </div>
+        </div>
+        <br>
+        <div class="navnum text-center" id="nav"></div>
+
+        <footer class="feeter">
+            <p class="text-2xl">by <a href="https://twitter.com/tinypunksnfts" target="_blank">NanoPunks</a></p>
+        </footer>
+
+        <script type="module" src="script.js"></script>
 </body>
 
 </html>

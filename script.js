@@ -1,5 +1,7 @@
 const itemsPerPage = 100;
 let pageIndex = 0;
+const apiKey = '5949f0ce-ce56-4f93-a1d2-5468de231da0';
+
 
 const nav = document.getElementById('nav');
 let grid = document.querySelector(".products");
@@ -145,7 +147,11 @@ function addListener(i) {
 
 async function imClicked(index) {
     if (items[index].inscriptionid === null) {
-        const response = await fetch(`https://api2.ordinalsbot.com/search?hash=${items[index].hash}`);
+        const response = await fetch(`https://api2.ordinalsbot.com/search?hash=${items[index].hash}`, {
+            headers: {
+                'x-api-key': `${apiKey}`
+            }
+        });
 
         if (!response.ok) {
             showError();
