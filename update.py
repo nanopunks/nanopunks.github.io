@@ -46,7 +46,7 @@ def initialize_status_file(status_file_path, items_count):
 
 
 async def main():
-    api_key = os.getenv('API_KEY')
+    api_key = '5949f0ce-ce56-4f93-a1d2-5468de231da0'
     items_file_path = 'data/items.json'
     status_file_path = 'data/status.json'
 
